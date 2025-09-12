@@ -18,7 +18,7 @@ jobs:
           command: echo "No tests yet, skipping..."
 
       - setup_remote_docker:
-          version: 20.10.18
+          version: 20.10.24
 
       - run:
           name: Build Docker image
