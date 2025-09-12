@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Log in to DockerHub
           command: |
-            echo "$DOCKERHUB_TOKEN" | docker login -u "sachin62" --password-stdin
+            echo "DOCKERHUB_PASSWORD" | docker login -u "sachin62" --password-stdin
 
       - run:
           name: Push image to DockerHub
