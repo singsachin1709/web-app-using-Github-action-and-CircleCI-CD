@@ -44,6 +44,14 @@ jobs:
               sudo mv kubectl /usr/local/bin/
               kubectl version --client
 
+       - run:
+          name: Setup kubeconfig
+          command: |
+            mkdir -p ~/.kube
+            echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
+            chmod 600 ~/.kube/config
+            kubectl config view
+            
       - run:
          name: restart deployment
          command: |
