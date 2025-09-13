@@ -18,7 +18,7 @@ initialize(**options)
 # -----------------------------
 bugsnag.configure(
     api_key="db4da5bc52009b3eeb7ae0084ff9f639",
-    project_root="/path/to/your/app"
+    project_root="."
 )
 
 # -----------------------------
