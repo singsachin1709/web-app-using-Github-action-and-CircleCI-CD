@@ -45,12 +45,12 @@ jobs:
               kubectl version --client
 
       - run:
-          name: Setup kubeconfig
+          name: Configure AWS CLI & kubeconfig
           command: |
-            mkdir -p ~/.kube
-            echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
-            chmod 600 ~/.kube/config
-            kubectl config view
+              sudo apt-get update && sudo apt-get install -y awscli
+              aws eks --region $AWS_REGION update-kubeconfig --name $EKS_CLUSTER_NAME
+              kubectl get nodes
+
             
       - run:
           name: restart deployment
