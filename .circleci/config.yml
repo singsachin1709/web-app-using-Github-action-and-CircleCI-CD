@@ -39,10 +39,19 @@ jobs:
       - run:
           name: Install kubectl
           command: |
-              sudo dnf install -y curl
+              # Update packages
+              sudo yum update -y
+
+              # Download the latest stable kubectl
               curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+              # Make it executable
               chmod +x kubectl
+
+              # Move it into PATH
               sudo mv kubectl /usr/local/bin/
+
+              # Verify
               kubectl version --client
 
       - run:
