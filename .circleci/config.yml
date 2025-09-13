@@ -35,6 +35,10 @@ jobs:
             IMAGE="sachin62/flask-app"
             docker tag flask-app sachin62/flask-app:latest
             docker push sachin62/flask-app:latest
+      - run:
+         name: restart deployment
+         command: |
+           kubectl rollout restart deployment flask-app
 
 workflows:
   version: 2
