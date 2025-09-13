@@ -44,7 +44,7 @@ jobs:
               sudo mv kubectl /usr/local/bin/
               kubectl version --client
 
-       - run:
+      - run:
           name: Setup kubeconfig
           command: |
             mkdir -p ~/.kube
@@ -52,7 +52,7 @@ jobs:
             chmod 600 ~/.kube/config
             kubectl config view
             
-       - run:
+      - run:
           name: restart deployment
           command: |
              kubectl rollout restart deployment flask-app
