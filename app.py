@@ -32,7 +32,7 @@ handle_exceptions(app)  # attaches Bugsnag error handler to Flask
 def home():
     # Send a custom metric to Datadog every time this endpoint is hit
     statsd.increment("flask_app.homepage.hit")
-    return "Hello, DevOps Assessment with Datadog and Bugsnag for monitoring tool!!!"
+    return "Hello, DevOps Assessment with Datadog and Bugsnag!!!"
 
 
 @app.route("/error")
