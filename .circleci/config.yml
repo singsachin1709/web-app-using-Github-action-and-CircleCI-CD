@@ -52,10 +52,10 @@ jobs:
             chmod 600 ~/.kube/config
             kubectl config view
             
-      - run:
-         name: restart deployment
-         command: |
-           kubectl rollout restart deployment flask-app
+       - run:
+          name: restart deployment
+          command: |
+             kubectl rollout restart deployment flask-app
 
 workflows:
   version: 2
